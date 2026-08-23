@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sejarah & Transformasi | Masjid Al Firdaus Temon Wetan</title>
+  <meta name="description" content="Sejarah perjalanan berdirinya Mushola Al Firdaus tahun 2009 hingga resmi bertransformasi menjadi Masjid Al Firdaus pada tahun 2026 / 1448 H di Dukuh Kaligondang, Temon Wetan.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-item">
+          <i class="fa-solid fa-moon"></i>
+          <span id="header-hijri-date">4 Muharram 1448 H</span>
+        </div>
+        <div class="top-bar-item">
+          <i class="fa-solid fa-calendar-day"></i>
+          <span id="header-masehi-date">Memuat tanggal...</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Kaligondang, Temon Wetan, Kulon Progo</span>
+        </div>
+        <div class="top-bar-item">
+          <span class="live-dot"></span>
+          <span id="live-clock" style="font-family: monospace; font-weight: 700;">--:--:-- WIB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-emblem">
+          <i class="fa-solid fa-mosque"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">MASJID AL FIRDAUS</span>
+          <span class="brand-subtitle">Kaligondang, Temon Wetan, Kulon Progo</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="sejarah.html" class="nav-link active">Sejarah</a>
+        <a href="takmir.html" class="nav-link">Takmir</a>
+        <a href="jadwal-sholat.html" class="nav-link">Jadwal Sholat</a>
+        <a href="infaq.html" class="nav-link">Infaq & ZIS</a>
+        <a href="agenda.html" class="nav-link">Agenda</a>
+        <a href="fasilitas.html" class="nav-link">Fasilitas</a>
+        <a href="kontak.html" class="nav-link">Kontak</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-icon" id="theme-toggle" title="Ganti Mode Gelap/Terang" aria-label="Ganti Tema">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="infaq.html" class="btn btn-gold btn-sm nav-btn-infaq">
+          <i class="fa-solid fa-hand-holding-heart"></i> Infaq
+        </a>
+        <button class="btn-icon mobile-toggle" id="mobile-toggle" aria-label="Buka Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section class="page-header-banner">
+      <div class="container page-header-content">
+        <div class="breadcrumb">
+          <a href="index.html"><i class="fa-solid fa-house"></i> Beranda</a>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; opacity: 0.7;"></i>
+          <span>Sejarah & Transformasi</span>
+        </div>
+        <h1 class="page-banner-title">
+          Kilas Balik & <span>Transformasi Masjid</span>
+        </h1>
+        <p class="page-banner-desc">
+          Perjalanan dari pendirian Mushola Al Firdaus tahun 2009 hingga resmi beralih status menjadi Masjid pada tahun 2026 (4 Muharram 1448 H) sebagai pusat tempat beribadah warga.
+        </p>
+      </div>
+    </section>
+
+    <!-- Compact Journey Steps & History Overview -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-timeline"></i> Linimasa Perjalanan</span>
+          <h2 class="section-title">Tahapan Transformasi Al Firdaus</h2>
+          <p class="section-subtitle">
+            Swadaya dan kebersamaan warga Dukuh Kaligondang dalam mendirikan dan memakmurkan sarana ibadah.
+          </p>
+        </div>
+
+        <!-- 3-Step Compact Stepper Grid (Rendered dynamically by js/app.js) -->
+        <div id="history-timeline-container"></div>
+
+        <!-- 2-Column Overview: Tujuan Transformasi & Visi Misi -->
+        <div class="vision-mission-grid" style="margin-top: 15px;">
+          <!-- Card Kiri: Tujuan & Fungsi Utama -->
+          <div class="vision-card">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+              <div class="infaq-feature-icon">
+                <i class="fa-solid fa-mosque"></i>
+              </div>
+              <div>
+                <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-heading);">Tujuan & Fungsi Transformasi</h3>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Manfaat peningkatan status masjid bagi warga</span>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div class="task-item-card" style="padding-left: 12px;">
+                <h4 class="task-item-title"><i class="fa-solid fa-check-circle" style="color: var(--primary-600);"></i> Penyelenggaraan Sholat Jumat</h4>
+                <p class="task-item-desc">Memudahkan seluruh warga Dukuh Kaligondang menunaikan ibadah Sholat Jumat berjamaah di lingkungan sendiri.</p>
+              </div>
+
+              <div class="task-item-card" style="padding-left: 12px;">
+                <h4 class="task-item-title"><i class="fa-solid fa-check-circle" style="color: var(--primary-600);"></i> Pusat Tempat Beribadah Rawatib</h4>
+                <p class="task-item-desc">Menegakkan sholat wajib 5 waktu berjamaah yang tertib, bersih, dan khusyuk bagi warga sekitar maupun musafir.</p>
+              </div>
+
+              <div class="task-item-card" style="padding-left: 12px;">
+                <h4 class="task-item-title"><i class="fa-solid fa-check-circle" style="color: var(--primary-600);"></i> Ukhuwah & Kebersamaan Warga</h4>
+                <p class="task-item-desc">Mempererat tali silaturahmi masyarakat melalui pengajian majelis taklim bapak-bapak, ibu-ibu, dan pemuda desa.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Kanan: Visi & Misi Masjid -->
+          <div class="mission-card">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+              <div class="infaq-feature-icon" style="background: var(--gold-50); color: var(--gold-600);">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <div>
+                <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-heading);">Visi & Misi Masjid</h3>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Landasan kepengurusan takmir Al Firdaus</span>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <strong style="font-size: 0.88rem; color: var(--gold-600); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">Visi:</strong>
+              <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; font-style: italic;">
+                "Menjadikan Masjid Al Firdaus sebagai tempat beribadah yang makmur, bersih, dan nyaman dalam melayani ibadah sholat berjamaah seluruh warga masyarakat serta mempererat persaudaraan di Dukuh Kaligondang."
+              </p>
+            </div>
+
+            <div>
+              <strong style="font-size: 0.88rem; color: var(--primary-700); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 6px;">Misi Utama:</strong>
+              <ul style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; padding-left: 18px; list-style: disc; display: flex; flex-direction: column; gap: 4px;">
+                <li>Menyelenggarakan ibadah sholat fardhu 5 waktu dan Sholat Jumat berjamaah secara tertib dan khusyuk.</li>
+                <li>Memelihara kebersihan, kesucian, dan fasilitas fisik ruang ibadah serta tempat wudhu.</li>
+                <li>Mendukung kegiatan keagamaan dan silaturahmi warga dalam suasana guyub rukun.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Navigation Actions -->
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="takmir.html" class="btn btn-primary">
+            <i class="fa-solid fa-users"></i> Lihat Susunan Takmir Masjid &rarr;
+          </a>
+          <a href="jadwal-sholat.html" class="btn btn-outline">
+            <i class="fa-solid fa-clock"></i> Cek Jadwal Sholat Hari Ini
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--primary-900); border: 1px solid var(--gold-500); display: flex; align-items: center; justify-content: center; color: var(--gold-400);">
+              <i class="fa-solid fa-mosque"></i>
+            </div>
+            <span class="footer-brand-title">MASJID AL FIRDAUS</span>
+          </div>
+          <p class="footer-desc">
+            Dukuh Kaligondang, Desa Temon Wetan, Kapanewon Temon, Kabupaten Kulon Progo, D.I. Yogyakarta 55654.
+          </p>
+          <div style="font-size: 0.85rem; color: var(--gold-400);">
+            <i class="fa-solid fa-phone"></i> +62 812-2942-3441
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Halaman Profil</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="sejarah.html">Sejarah & Transformasi</a></li>
+            <li><a href="takmir.html">Takmir</a></li>
+            <li><a href="jadwal-sholat.html">Jadwal Sholat</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Layanan & Informasi</h4>
+          <ul class="footer-links">
+            <li><a href="infaq.html">Layanan Infaq (BPD DIY)</a></li>
+            <li><a href="agenda.html">Agenda & Sholat Jumat</a></li>
+            <li><a href="fasilitas.html">Fasilitas & Galeri</a></li>
+            <li><a href="kontak.html">Kontak & Lokasi</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Rekening Resmi Infaq</h4>
+          <div style="background: rgba(255,255,255,0.05); padding: 14px; border-radius: var(--radius-md); border: 1px solid rgba(245,158,11,0.3); margin-bottom: 12px;">
+            <div style="font-size: 0.8rem; color: #94a3b8;">Bank BPD DIY (Capem Temon)</div>
+            <div style="font-family: monospace; font-size: 1.15rem; font-weight: 800; color: var(--gold-400);">024.231.001470</div>
+            <div style="font-size: 0.75rem; color: #cbd5e1;">a.n. MUH ABDUL AZIS QQ MUSHOLLA AL FIRDAUS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Masjid Al Firdaus Temon Wetan. All Rights Reserved.</div>
+        <div>Program Profilisasi Masjid &bull; Pengabdian Masyarakat KKN Temon Wetan</div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/6281229423441?text=Assalamu%27alaikum%20Pengurus%20Masjid%20Al%20Firdaus%20Temon%20Wetan" target="_blank" rel="noopener noreferrer" class="floating-wa-btn" title="Hubungi Takmir via WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/data-takmir.js"></script>
+  <script src="js/prayer-times.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
