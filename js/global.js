@@ -89,15 +89,37 @@ function initNavigation() {
 }
 
 function highlightActiveNav() {
-  const currentPath = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".nav-link").forEach(link => {
-    const linkPath = link.getAttribute("href");
-    if (linkPath === currentPath || (currentPath === "" && linkPath === "index.html")) {
+  const pathname = window.location.pathname.toLowerCase();
+  const filename = pathname.split("/").pop() || "index.html";
+  const cleanName = filename.replace(".html", "") || "index";
+
+  const links = document.querySelectorAll(".nav-link");
+  if (!links.length) return;
+
+  let matched = false;
+  links.forEach(link => {
+    const href = (link.getAttribute("href") || "").toLowerCase();
+    const linkClean = href.replace(".html", "");
+
+    if (
+      filename === href ||
+      (cleanName === "index" && (href === "index.html" || href === "/" || href === "")) ||
+      (cleanName !== "index" && (cleanName === linkClean || pathname.includes(linkClean)))
+    ) {
       link.classList.add("active");
+      matched = true;
     } else {
       link.classList.remove("active");
     }
   });
+
+  // Fallback jika tidak ada yang cocok
+  if (!matched) {
+    const homeLink = document.querySelector('.nav-link[href="index.html"]');
+    if (homeLink && (cleanName === "index" || pathname === "/" || pathname === "")) {
+      homeLink.classList.add("active");
+    }
+  }
 }
 
 /* ==========================================================================
