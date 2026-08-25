@@ -1132,113 +1132,249 @@ button, input, textarea, select {
   line-height: 1.6;
 }
 
-/* ==========================================================================
-   STRUKTUR TAKMIR & ORGANOGRAM INTERAKTIF
+/*/* ==========================================================================
+   EXECUTIVE TAKMIR SHOWCASE (PROFESSIONAL MODERN LAYOUT)
    ========================================================================== */
-.board-highlight-card {
+
+/* 1. Executive Leadership Trio */
+.exec-leadership-section {
+  margin-bottom: 45px;
+}
+
+.exec-trio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1fr;
+  gap: 22px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.exec-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 26px 22px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.exec-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.exec-card.leader-main {
   background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-950) 100%);
   border: 2px solid var(--gold-500);
-  border-radius: var(--radius-lg);
-  padding: 30px;
   color: #ffffff;
-  margin-bottom: 40px;
-  box-shadow: 0 15px 35px rgba(6, 78, 59, 0.35);
+  padding: 34px 26px;
+  box-shadow: 0 16px 40px rgba(6, 78, 59, 0.4), 0 0 25px rgba(245, 158, 11, 0.2);
+  transform: scale(1.02);
 }
 
-.board-leader-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+.exec-card.leader-main:hover {
+  transform: scale(1.04) translateY(-4px);
 }
 
-.board-leader-item {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  border-radius: var(--radius-md);
-  padding: 20px;
-  text-align: center;
+.exec-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
 }
 
-.board-avatar-circle {
-  width: 48px;
-  height: 48px;
+.exec-card.leader-main .exec-badge-pill {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--gold-300);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+}
+
+.exec-card.leader-side .exec-badge-pill {
+  background: var(--primary-50);
+  color: var(--primary-800);
+  border: 1px solid var(--primary-200);
+}
+
+[data-theme="dark"] .exec-card.leader-side .exec-badge-pill {
+  background: var(--primary-900);
+  color: var(--gold-300);
+  border-color: var(--border-gold);
+}
+
+.exec-avatar-circle {
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 10px auto;
-  font-size: 1.3rem;
+  margin: 0 auto 14px auto;
+  font-size: 1.5rem;
 }
 
-.board-avatar-circle.gold {
+.exec-card.leader-main .exec-avatar-circle {
   background: var(--gold-500);
   color: #000000;
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.45);
 }
 
-.board-avatar-circle.emerald {
-  background: var(--primary-600);
+.exec-card.leader-side .exec-avatar-circle {
+  background: var(--primary-800);
   color: #ffffff;
 }
 
-.board-role-badge {
-  font-size: 0.76rem;
-  font-weight: 700;
-  color: var(--gold-300);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+[data-theme="dark"] .exec-card.leader-side .exec-avatar-circle {
+  background: var(--primary-900);
+  color: var(--gold-400);
+  border: 1px solid var(--border-gold);
 }
 
-.board-leader-name {
-  font-size: 1.2rem;
+.exec-person-name {
+  font-size: 1.35rem;
   font-weight: 800;
-  margin-top: 4px;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.exec-card.leader-main .exec-person-name {
   color: #ffffff;
 }
 
-.takmir-filter-nav {
+.exec-card.leader-side .exec-person-name {
+  color: var(--text-heading);
+}
+
+.exec-person-role {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.exec-card.leader-main .exec-person-role {
+  color: var(--gold-400);
+}
+
+.exec-card.leader-side .exec-person-role {
+  color: var(--primary-700);
+}
+
+[data-theme="dark"] .exec-card.leader-side .exec-person-role {
+  color: var(--gold-400);
+}
+
+.exec-person-desc {
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.exec-card.leader-main .exec-person-desc {
+  color: #cbd5e1;
+}
+
+.exec-card.leader-side .exec-person-desc {
+  color: var(--text-muted);
+}
+
+/* 2. Smart Search & Filter Control Bar */
+.takmir-control-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 35px;
+  align-items: center;
+}
+
+.takmir-search-wrap {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+}
+
+.takmir-search-wrap i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.takmir-search-field {
+  width: 100%;
+  padding: 12px 16px 12px 44px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  font-size: 0.92rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.takmir-search-field:focus {
+  outline: none;
+  border-color: var(--gold-500);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.dept-filter-pills {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 35px;
 }
 
-.filter-btn {
+.dept-pill-btn {
   padding: 7px 16px;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-color);
-  background-color: var(--bg-surface);
+  background: var(--bg-surface);
   color: var(--text-main);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.filter-btn:hover, .filter-btn.active {
-  background-color: var(--primary-800);
+.dept-pill-btn:hover, .dept-pill-btn.active {
+  background: var(--primary-800);
   color: #ffffff;
   border-color: var(--primary-800);
-  box-shadow: 0 4px 12px rgba(6, 78, 59, 0.2);
+  box-shadow: 0 4px 12px rgba(6, 78, 59, 0.25);
 }
 
-[data-theme="dark"] .filter-btn.active {
-  background-color: var(--gold-600);
-  border-color: var(--gold-500);
+[data-theme="dark"] .dept-pill-btn.active {
+  background: var(--gold-600);
   color: #000000;
+  border-color: var(--gold-500);
 }
 
-.takmir-grid {
+/* 3. 8 Rich Department Dossier Cards */
+.dept-showcase-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 50px;
 }
 
-.takmir-card {
+.dept-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
+  border-top: 4px solid var(--primary-600);
   border-radius: var(--radius-lg);
-  padding: 22px;
+  padding: 24px 22px;
   box-shadow: var(--card-shadow);
   transition: var(--transition);
   display: flex;
@@ -1246,90 +1382,163 @@ button, input, textarea, select {
   position: relative;
 }
 
-.takmir-card:hover {
-  transform: translateY(-6px);
+.dept-card:hover {
+  transform: translateY(-5px);
   box-shadow: var(--card-shadow-hover);
-  border-color: var(--border-gold);
+  border-color: var(--gold-500);
+  border-top-color: var(--gold-500);
 }
 
-.takmir-card-header {
+.dept-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.dept-brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 14px;
 }
 
-.takmir-avatar {
-  width: 48px;
-  height: 48px;
+.dept-icon-box {
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+  background: var(--primary-50);
   color: var(--primary-800);
-  border: 1px solid var(--primary-300);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
+  flex-shrink: 0;
 }
 
-[data-theme="dark"] .takmir-avatar {
-  background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-950) 100%);
+[data-theme="dark"] .dept-icon-box {
+  background: var(--primary-900);
   color: var(--gold-400);
-  border-color: var(--border-gold);
+  border: 1px solid var(--border-gold);
 }
 
-.takmir-meta {
-  display: flex;
-  flex-direction: column;
-}
-
-.takmir-name {
-  font-size: 1.1rem;
+.dept-title {
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--text-heading);
+  line-height: 1.25;
 }
 
-.takmir-role {
-  font-size: 0.82rem;
+.dept-category-tag {
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--gold-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-[data-theme="dark"] .takmir-role {
+[data-theme="dark"] .dept-category-tag {
   color: var(--gold-400);
 }
 
-.takmir-badge {
-  display: inline-block;
-  align-self: flex-start;
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
-  font-size: 0.74rem;
-  font-weight: 700;
-  background-color: var(--primary-50);
-  color: var(--primary-800);
-  margin-bottom: 10px;
-}
-
-[data-theme="dark"] .takmir-badge {
-  background-color: var(--primary-900);
-  color: #a7f3d0;
-}
-
-.takmir-desc {
-  font-size: 0.88rem;
+.dept-num-badge {
+  background: var(--bg-surface-alt);
   color: var(--text-muted);
-  line-height: 1.55;
+  border: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.dept-members-container {
+  margin-bottom: 16px;
+}
+
+.dept-members-label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dept-members-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.member-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  transition: var(--transition);
+}
+
+.member-chip i {
+  color: var(--gold-500);
+  font-size: 0.8rem;
+}
+
+.member-chip:hover {
+  background: var(--primary-50);
+  border-color: var(--primary-300);
+  color: var(--primary-900);
+}
+
+[data-theme="dark"] .member-chip:hover {
+  background: var(--primary-900);
+  border-color: var(--border-gold);
+  color: #ffffff;
+}
+
+.dept-duty-box {
+  background: var(--bg-surface-alt);
+  border-left: 3px solid var(--gold-500);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 12px 14px;
   margin-top: auto;
+}
+
+.dept-duty-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--gold-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+}
+
+[data-theme="dark"] .dept-duty-title {
+  color: var(--gold-400);
+}
+
+.dept-duty-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
 }
 
 /* Tasks & Roles Box */
 .task-breakdown-box {
-  margin-top: 50px;
+  margin-top: 40px;
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 30px;
   box-shadow: var(--card-shadow);
 }
 
@@ -2396,31 +2605,31 @@ button, input, textarea, select {
     padding: 18px 14px;
   }
 
-  /* Takmir Page */
-  .pimpinan-grid {
+  /* Takmir Page: Executive Showcase Mobile */
+  .exec-trio-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
   }
-  .pimpinan-card {
-    padding: 18px 14px;
+  .exec-card.leader-main {
+    padding: 24px 18px;
+    transform: none;
   }
-  .takmir-filter-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 6px;
-    margin-bottom: 18px;
+  .exec-person-name {
+    font-size: 1.2rem;
   }
-  .filter-btn {
-    padding: 6px 11px;
-    font-size: 0.76rem;
-  }
-  .takmir-grid {
+  .dept-showcase-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
   }
-  .takmir-card {
-    padding: 16px 14px;
+  .dept-card {
+    padding: 18px 16px;
+  }
+  .dept-title {
+    font-size: 1.05rem;
+  }
+  .member-chip {
+    font-size: 0.8rem;
+    padding: 5px 10px;
   }
 
   /* Infaq Page: Bank BPD DIY Passbook Card Mobile Optimization */

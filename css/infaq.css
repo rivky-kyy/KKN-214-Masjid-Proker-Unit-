@@ -1,0 +1,255 @@
+/**
+ * Infaq & ZIS Page Styling - Masjid Al Firdaus
+ * Khusus Halaman Infaq (Bank BPD DIY Passbook Card, Salin No. Rekening & Program Alokasi)
+ */
+
+/* ==========================================================================
+   BANK BPD DIY PASSBOOK CARD (ULTRA-PREMIUM METALLIC)
+   ========================================================================== */
+.infaq-container {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.bank-passbook-card {
+  background: linear-gradient(135deg, #022018 0%, #064e3b 50%, #032d22 100%);
+  border: 2px solid var(--gold-500);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  color: #ffffff;
+  box-shadow: 0 20px 45px rgba(6, 78, 59, 0.45), 0 0 25px rgba(245, 158, 11, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.bank-passbook-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(245, 158, 11, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.bank-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.bank-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bank-logo-text {
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--gold-400);
+}
+
+.bank-branch-badge {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.account-number-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px dashed rgba(245, 158, 11, 0.5);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  margin-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.account-num-label {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.account-number {
+  font-family: monospace;
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--gold-300);
+}
+
+.btn-copy {
+  background: linear-gradient(135deg, var(--gold-400) 0%, var(--gold-500) 100%);
+  color: #000000;
+  border: none;
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+}
+
+.btn-copy:hover {
+  background: linear-gradient(135deg, var(--gold-300) 0%, var(--gold-400) 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.6);
+}
+
+.account-holder-info {
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.holder-label {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.holder-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+}
+
+.bank-stamp-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: #cbd5e1;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   PROGRAM ALOKASI INFAQ GRID
+   ========================================================================== */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.program-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 26px 22px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--primary-400);
+}
+
+.program-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+  color: var(--primary-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 16px;
+  border: 1px solid var(--primary-200);
+}
+
+[data-theme="dark"] .program-icon-box {
+  background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-950) 100%);
+  color: var(--gold-400);
+  border-color: var(--border-gold);
+}
+
+.program-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.program-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   INFAQ RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .infaq-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bank-passbook-card {
+    padding: 22px 18px;
+  }
+  .bank-logo-text {
+    font-size: 1.1rem;
+  }
+  .bank-branch-badge {
+    font-size: 0.68rem;
+    padding: 4px 8px;
+  }
+  .account-number-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+  }
+  .account-number {
+    font-size: 1.35rem;
+  }
+  .btn-copy {
+    width: 100%;
+    justify-content: center;
+  }
+  .holder-name {
+    font-size: 0.92rem;
+  }
+  .program-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

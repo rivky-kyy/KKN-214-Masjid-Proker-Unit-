@@ -1,11 +1,13 @@
 /**
  * Animations & Micro-interactions - Masjid Al Firdaus
+ * Kumpulan Keyframes, Transisi Halus, dan Efek Interaktif
  */
 
-@keyframes fadeIn {
+/* Fade In Up */
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -13,49 +15,68 @@
   }
 }
 
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
+.animate-fade-in {
+  animation: fadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Subtle Floating */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-float {
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+
+/* Pulse Dot for Live Indicator */
+@keyframes pulseDot {
+  0% {
     transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4), 0 0 30px rgba(16, 185, 129, 0.2);
-    border-color: rgba(245, 158, 11, 0.8);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(245, 158, 11, 0.8), 0 0 45px rgba(16, 185, 129, 0.4);
-    border-color: rgba(245, 158, 11, 1);
-  }
-}
-
-@keyframes liveBadgePulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
+  70% {
     transform: scale(1.15);
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
   }
 }
 
-@keyframes floatSoft {
-  0%, 100% {
-    transform: translateY(0px);
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulseDot 2s infinite;
+}
+
+/* Pulse for WhatsApp Floating Button */
+@keyframes pulseWa {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
   }
-  50% {
-    transform: translateY(-8px);
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
   }
 }
 
-@keyframes shimmer {
+.floating-wa-btn {
+  animation: pulseWa 2.8s infinite;
+}
+
+/* Shimmer Highlight Effect */
+@keyframes shimmerGlow {
   0% {
     background-position: -200% 0;
   }
@@ -64,35 +85,22 @@
   }
 }
 
-/* Helper animation classes */
-.animate-fade-in {
-  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.shimmer-badge {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.4) 50%, rgba(245, 158, 11, 0.15) 100%);
+  background-size: 200% 100%;
+  animation: shimmerGlow 3s infinite;
 }
 
-.animate-pulse-glow {
-  animation: pulseGlow 2.5s infinite ease-in-out;
+/* Halo Glow for Active Prayer Card */
+@keyframes haloGlow {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(6, 78, 59, 0.4), 0 0 12px rgba(245, 158, 11, 0.2);
+  }
+  50% {
+    box-shadow: 0 12px 30px rgba(6, 78, 59, 0.6), 0 0 20px rgba(245, 158, 11, 0.45);
+  }
 }
 
-.animate-float {
-  animation: floatSoft 4s ease-in-out infinite;
-}
-
-.live-dot {
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background-color: #10b981;
-  box-shadow: 0 0 8px #10b981;
-  animation: liveBadgePulse 1.8s infinite;
-  margin-right: 6px;
-}
-
-.gold-shimmer {
-  background: linear-gradient(90deg, #f59e0b 0%, #fef3c7 50%, #f59e0b 100%);
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shimmer 3s infinite linear;
+.prayer-card.next-prayer {
+  animation: haloGlow 3s ease-in-out infinite;
 }

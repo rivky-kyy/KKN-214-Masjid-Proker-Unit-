@@ -1,0 +1,415 @@
+/**
+ * Kontak & Peta Lokasi Page Styling - Masjid Al Firdaus
+ * Khusus Halaman Kontak (Peta Lokasi 2 Kolom, WhatsApp Banner, Form Pesan & FAQ Accordion)
+ */
+
+/* ==========================================================================
+   2-COLUMN LOCATION & CONTACT GRID
+   ========================================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+  margin-bottom: 50px;
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 1: GOOGLE MAPS CARD
+   -------------------------------------------------------------------------- */
+.map-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.map-card-header {
+  padding: 24px 26px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-surface-alt);
+}
+
+.map-card-header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+  color: var(--primary-800);
+  border: 1px solid var(--primary-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .map-card-header-icon {
+  background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-950) 100%);
+  color: var(--gold-400);
+  border-color: var(--border-gold);
+}
+
+.map-card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  line-height: 1.25;
+}
+
+.map-card-subtitle {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.map-iframe-wrapper {
+  width: 100%;
+  height: 280px;
+  background-color: #e2e8f0;
+  position: relative;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.map-iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.map-info-box {
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.map-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.map-info-icon {
+  font-size: 1.15rem;
+  color: var(--primary-600);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .map-info-icon {
+  color: var(--gold-400);
+}
+
+.map-info-item strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--text-heading);
+  margin-bottom: 2px;
+}
+
+.map-info-item p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 2: CONTACT & WHATSAPP CARD
+   -------------------------------------------------------------------------- */
+.contact-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  height: 100%;
+}
+
+/* Quick WhatsApp Banner */
+.contact-wa-banner {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.08) 0%, rgba(18, 140, 126, 0.12) 100%);
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme="dark"] .contact-wa-banner {
+  background: linear-gradient(135deg, rgba(7, 94, 84, 0.35) 0%, rgba(6, 78, 59, 0.45) 100%);
+  border-color: rgba(37, 211, 102, 0.35);
+}
+
+.contact-wa-icon {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-size: 2.2rem;
+  color: #25d366;
+  opacity: 0.85;
+}
+
+.contact-wa-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #128c7e;
+  margin-bottom: 4px;
+}
+
+[data-theme="dark"] .contact-wa-badge {
+  color: #4ade80;
+}
+
+.contact-wa-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+
+.contact-wa-number {
+  font-family: monospace;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.contact-wa-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.btn-whatsapp {
+  background: #128c7e;
+  color: #ffffff;
+  font-weight: 700;
+  border: 1px solid #128c7e;
+  box-shadow: 0 4px 14px rgba(18, 140, 126, 0.3);
+  transition: var(--transition);
+}
+
+.btn-whatsapp:hover {
+  background: #075e54;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(18, 140, 126, 0.4);
+}
+
+/* Fast Message Form */
+.contact-form-section {
+  border-top: 1px solid var(--border-light);
+  padding-top: 18px;
+}
+
+.contact-form-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-form-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface-alt);
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-600);
+  background-color: var(--bg-surface);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+[data-theme="dark"] .form-input:focus, 
+[data-theme="dark"] .form-select:focus, 
+[data-theme="dark"] .form-textarea:focus {
+  border-color: var(--gold-400);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+.form-textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* ==========================================================================
+   FAQ ACCORDION
+   ========================================================================== */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+}
+
+.faq-item:hover {
+  border-color: var(--primary-400);
+}
+
+.faq-header {
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--bg-surface);
+  user-select: none;
+  transition: var(--transition);
+}
+
+.faq-header:hover {
+  background-color: var(--bg-surface-alt);
+}
+
+.faq-question {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  line-height: 1.35;
+}
+
+.faq-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--primary-700);
+  transition: transform 0.3s ease, background 0.3s ease;
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .faq-icon {
+  background: var(--primary-900);
+  color: var(--gold-400);
+  border-color: var(--border-gold);
+}
+
+.faq-item.active {
+  border-color: var(--primary-500);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  background: var(--primary-600);
+  color: #ffffff;
+}
+
+.faq-body {
+  padding: 0 22px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+  background-color: var(--bg-surface);
+}
+
+.faq-item.active .faq-body {
+  padding: 0 22px 20px;
+  max-height: 320px;
+}
+
+.faq-answer {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  border-top: 1px solid var(--border-light);
+  padding-top: 14px;
+}
+
+/* ==========================================================================
+   KONTAK RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .map-iframe-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-iframe-wrapper {
+    height: 240px;
+  }
+  .map-card-header, .map-info-box, .contact-card {
+    padding: 18px 16px;
+  }
+  .contact-wa-number {
+    font-size: 1.18rem;
+  }
+  .faq-header {
+    padding: 16px 14px;
+  }
+  .faq-question {
+    font-size: 0.92rem;
+  }
+  .faq-item.active .faq-body {
+    padding: 0 14px 16px;
+  }
+}

@@ -1,0 +1,193 @@
+/**
+ * Sejarah Page Styling - Masjid Al Firdaus
+ * Khusus Halaman Sejarah (3-Step Journey Stepper, Visi & Misi)
+ */
+
+/* ==========================================================================
+   3-STEP JOURNEY STEPPER (COMPACT & MODERN)
+   ========================================================================== */
+.journey-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 24px;
+  margin-bottom: 35px;
+}
+
+.journey-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.journey-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-600), var(--primary-400));
+}
+
+.journey-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--primary-400);
+}
+
+.journey-card.highlight {
+  border: 2px solid var(--gold-500);
+  background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(245, 158, 11, 0.04) 100%);
+  box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.25);
+}
+
+.journey-card.highlight::before {
+  background: linear-gradient(to right, var(--gold-400), var(--gold-600));
+  height: 5px;
+}
+
+.journey-step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.journey-step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 800;
+  background: var(--primary-50);
+  color: var(--primary-800);
+  border: 1px solid var(--primary-200);
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .journey-step-badge {
+  background: var(--primary-900);
+  color: var(--gold-300);
+  border-color: var(--border-gold);
+}
+
+.journey-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary-800);
+  color: var(--gold-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(6, 78, 59, 0.3);
+}
+
+.journey-year {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--text-heading);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.journey-card.highlight .journey-year {
+  color: var(--gold-600);
+  background: linear-gradient(135deg, var(--gold-600) 0%, var(--gold-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="dark"] .journey-card.highlight .journey-year {
+  background: linear-gradient(135deg, var(--gold-300) 0%, var(--gold-400) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.journey-hijri {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.journey-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.journey-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   VISI & MISI 2-COLUMN GRID
+   ========================================================================== */
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 28px;
+}
+
+.vision-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--primary-600);
+}
+
+.mission-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--gold-500);
+}
+
+/* ==========================================================================
+   SEJARAH RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .journey-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .journey-card {
+    padding: 22px 18px;
+  }
+  .journey-year {
+    font-size: 1.75rem;
+  }
+  .vision-card, .mission-card {
+    padding: 22px 18px;
+  }
+}

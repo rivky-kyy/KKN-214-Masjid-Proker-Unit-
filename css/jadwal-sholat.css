@@ -1,0 +1,275 @@
+/**
+ * Jadwal Sholat Page Styling - Masjid Al Firdaus
+ * Khusus Halaman Jadwal Sholat (Widget 7 Waktu, Tabel Bulanan & Adab Berjamaah)
+ */
+
+/* ==========================================================================
+   PRAYER WIDGET & COUNTDOWN
+   ========================================================================== */
+.prayer-container-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.prayer-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.prayer-title-box h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-heading);
+}
+
+.prayer-title-box p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.prayer-countdown-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--primary-300);
+}
+
+[data-theme="dark"] .prayer-countdown-box {
+  background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-950) 100%);
+  border-color: var(--border-gold);
+}
+
+.countdown-label {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--primary-900);
+}
+
+[data-theme="dark"] .countdown-label {
+  color: var(--gold-300);
+}
+
+.countdown-time {
+  font-family: monospace;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-950);
+}
+
+[data-theme="dark"] .countdown-time {
+  color: #ffffff;
+}
+
+.prayer-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 14px;
+}
+
+.prayer-card {
+  background: var(--bg-surface-alt);
+  border-radius: var(--radius-md);
+  padding: 20px 12px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.prayer-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-400);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.prayer-card i {
+  font-size: 1.4rem;
+  color: var(--primary-600);
+  margin-bottom: 8px;
+  display: block;
+}
+
+[data-theme="dark"] .prayer-card i {
+  color: var(--gold-400);
+}
+
+.prayer-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.prayer-time {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  display: block;
+}
+
+.prayer-badge {
+  display: none;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  margin-top: 6px;
+}
+
+.prayer-card.next-prayer {
+  background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-900) 100%);
+  border-color: var(--gold-500);
+  box-shadow: 0 8px 24px rgba(6, 78, 59, 0.45);
+}
+
+.prayer-card.next-prayer i {
+  color: var(--gold-400);
+}
+
+.prayer-card.next-prayer .prayer-name {
+  color: var(--gold-300);
+}
+
+.prayer-card.next-prayer .prayer-time {
+  color: #ffffff;
+}
+
+.prayer-card.next-prayer .prayer-badge {
+  display: inline-block;
+  background-color: var(--gold-500);
+  color: #000000;
+}
+
+.prayer-card.active-prayer {
+  border-color: var(--primary-500);
+  background-color: var(--primary-50);
+}
+
+[data-theme="dark"] .prayer-card.active-prayer {
+  background-color: var(--primary-900);
+}
+
+/* ==========================================================================
+   SCHEDULE TABLE SECTION
+   ========================================================================== */
+.schedule-table-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 40px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.schedule-table th {
+  background-color: var(--primary-900);
+  color: #ffffff;
+  padding: 16px 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.schedule-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.schedule-table tr:hover td {
+  background-color: var(--primary-50);
+}
+
+[data-theme="dark"] .schedule-table tr:hover td {
+  background-color: var(--primary-900);
+}
+
+.schedule-table tr.today-row td {
+  background-color: rgba(245, 158, 11, 0.15);
+  font-weight: 800;
+  color: var(--gold-700);
+}
+
+[data-theme="dark"] .schedule-table tr.today-row td {
+  color: var(--gold-300);
+}
+
+/* ==========================================================================
+   ADAB BERJAMAAH & DOA GRID
+   ========================================================================== */
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 26px;
+}
+
+.vision-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--primary-600);
+}
+
+/* ==========================================================================
+   JADWAL SHOLAT RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .prayer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prayer-container-card {
+    padding: 18px 14px;
+  }
+  .prayer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .prayer-card {
+    padding: 14px 8px;
+  }
+  .prayer-time {
+    font-size: 1.05rem;
+  }
+  .schedule-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .schedule-table th, .schedule-table td {
+    padding: 10px 8px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+  .vision-card {
+    padding: 20px 16px;
+  }
+}

@@ -17,9 +17,10 @@
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- CSS -->
+  <!-- Modular CSS -->
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/agenda.css">
 </head>
 <body>
 
@@ -120,9 +121,13 @@
           <!-- Rendered dynamically by js/app.js -->
         </div>
 
-        <div style="margin-top: 45px; text-align: center;">
+        <!-- Next Navigation Actions -->
+        <div style="margin-top: 45px; text-align: center; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
           <a href="fasilitas.html" class="btn btn-primary">
-            <i class="fa-solid fa-images"></i> Lihat Fasilitas Tempat Ibadah &rarr;
+            <i class="fa-solid fa-images"></i> Fasilitas & Galeri Foto &rarr;
+          </a>
+          <a href="jadwal-sholat.html" class="btn btn-outline">
+            <i class="fa-solid fa-clock"></i> Jadwal Sholat 5 Waktu
           </a>
         </div>
       </div>
@@ -189,9 +194,10 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- Scripts -->
+  <!-- Modular Scripts -->
   <script src="js/data-takmir.js"></script>
   <script src="js/prayer-times.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/agenda.js"></script>
 </body>
 </html>

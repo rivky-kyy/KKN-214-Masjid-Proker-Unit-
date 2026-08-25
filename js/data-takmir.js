@@ -70,7 +70,7 @@ const MASJID_DATA = {
     { id: "all", name: "Semua Pengurus" },
     { id: "inti", name: "Pimpinan Inti" },
     { id: "pendidikan", name: "Pendidikan & Bimbingan" },
-    { id: "peribadatan", name: "Ibadah & Sholat" },
+    { id: "ibadah", name: "Ibadah & Kemakmuran Sholat" },
     { id: "pembangunan", name: "Pembangunan" },
     { id: "sosial", name: "Sosial & Qurban" },
     { id: "rismas", name: "Remaja Masjid (Rismas)" },
@@ -85,7 +85,7 @@ const MASJID_DATA = {
       name: "Muh Abdul Azis",
       role: "Ketua Takmir",
       category: "inti",
-      badge: "Pimpinan",
+      badge: "Pimpinan Puncak",
       icon: "fa-user-tie",
       desc: "Memimpin seluruh koordinasi kebijakan ketakmiran, kemakmuran masjid, dan ketertiban kegiatan beribadah jamaah Al Firdaus."
     },
@@ -140,27 +140,27 @@ const MASJID_DATA = {
       desc: "Mendampingi kegiatan edukasi keislaman anak-anak warga dan peringatan hari-hari besar Islam."
     },
 
-    // 2. Seksi Peribadatan
+    // 2. Seksi Ibadah & Sholat
     {
       name: "Wito Utomo",
-      role: "Seksi Peribadatan",
-      category: "peribadatan",
+      role: "Seksi Ibadah & Sholat",
+      category: "ibadah",
       badge: "Imam & Sholat",
       icon: "fa-kaaba",
       desc: "Mengatur jadwal imam rawatib harian, khatib sholat Jumat, dan ketertiban kegiatan beribadah sholat fardhu warga."
     },
     {
       name: "Umar Ahmadi",
-      role: "Seksi Peribadatan",
-      category: "peribadatan",
+      role: "Seksi Ibadah & Sholat",
+      category: "ibadah",
       badge: "Kekhidmatan Ibadah",
       icon: "fa-mosque",
       desc: "Menjaga kekhidmatan sholat fardhu 5 waktu, sholat tarawih, serta ketenangan ruang utama tempat beribadah."
     },
     {
       name: "Purwadi",
-      role: "Seksi Peribadatan",
-      category: "peribadatan",
+      role: "Seksi Ibadah & Sholat",
+      category: "ibadah",
       badge: "Jadwal & Muadzin",
       icon: "fa-bell",
       desc: "Mengkoordinir kumandang adzan tepat waktu setiap waktu sholat dan kesiapan sholat Jumat berjamaah."

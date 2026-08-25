@@ -25,9 +25,11 @@
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- CSS -->
+  <!-- Modular CSS -->
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/infaq.css">
 </head>
 <body>
 
@@ -119,28 +121,46 @@
 
           <div class="hero-actions">
             <a href="jadwal-sholat.html" class="btn btn-gold">
-              <i class="fa-solid fa-clock"></i> Jadwal Sholat Hari Ini
+              <i class="fa-solid fa-clock"></i> Jadwal Sholat
             </a>
             <a href="infaq.html" class="btn btn-primary">
-              <i class="fa-solid fa-hand-holding-dollar"></i> Layanan Infaq (Bank BPD DIY)
+              <i class="fa-solid fa-hand-holding-dollar"></i> Layanan Infaq
             </a>
-            <a href="takmir.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #fff;">
-              <i class="fa-solid fa-users"></i> Susunan Takmir
+            <a href="takmir.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.35); color: #ffffff; background: rgba(255,255,255,0.06); backdrop-filter: blur(4px);">
+              <i class="fa-solid fa-users"></i> Takmir Masjid
             </a>
           </div>
 
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-val">2009</span>
-              <span class="stat-lbl">Tahun Berdiri (Mushola)</span>
+          <!-- 3 Glassmorphism Stat Cards Grid -->
+          <div class="hero-stats-glass-grid">
+            <div class="hero-stat-card">
+              <div class="hero-stat-icon-wrap">
+                <i class="fa-solid fa-landmark"></i>
+              </div>
+              <div class="hero-stat-info">
+                <div class="hero-stat-number">2009</div>
+                <div class="hero-stat-label">Awal Berdiri (Mushola)</div>
+              </div>
             </div>
-            <div class="stat-item">
-              <span class="stat-val">2026</span>
-              <span class="stat-lbl">Resmi Menjadi Masjid</span>
+
+            <div class="hero-stat-card featured-gold">
+              <div class="hero-stat-icon-wrap gold">
+                <i class="fa-solid fa-mosque"></i>
+              </div>
+              <div class="hero-stat-info">
+                <div class="hero-stat-number">2026</div>
+                <div class="hero-stat-label">Resmi Menjadi Masjid</div>
+              </div>
             </div>
-            <div class="stat-item">
-              <span class="stat-val">5 Waktu</span>
-              <span class="stat-lbl">Berjamaah & Sholat Jumat</span>
+
+            <div class="hero-stat-card">
+              <div class="hero-stat-icon-wrap">
+                <i class="fa-solid fa-hands-praying"></i>
+              </div>
+              <div class="hero-stat-info">
+                <div class="hero-stat-number">5 Waktu</div>
+                <div class="hero-stat-label">Sholat & Sholat Jumat</div>
+              </div>
             </div>
           </div>
         </div>
@@ -169,7 +189,7 @@
                 <i class="fa-solid fa-kaaba"></i>
               </div>
               <div>
-                <h2 class="prayer-main-title">Jadwal Sholat 5 Waktu Real-Time</h2>
+                <h2 class="prayer-main-title">Jadwal Sholat 5 Waktu</h2>
                 <span class="prayer-loc-tag">
                   <i class="fa-solid fa-location-dot" style="color: var(--primary-600);"></i> Wilayah Temon Wetan, Kulon Progo (Kemenag RI)
                 </span>
@@ -454,9 +474,10 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- Scripts -->
+  <!-- Modular Scripts -->
   <script src="js/data-takmir.js"></script>
   <script src="js/prayer-times.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/infaq.js"></script>
 </body>
 </html>

@@ -1,0 +1,139 @@
+/**
+ * Agenda & Kegiatan Page Styling - Masjid Al Firdaus
+ * Khusus Halaman Agenda (Kartu Kegiatan, Sholat Jumat & Pengajian)
+ */
+
+/* ==========================================================================
+   AGENDA CARDS GRID
+   ========================================================================== */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.agenda-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.agenda-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-600), var(--gold-500));
+}
+
+.agenda-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--primary-400);
+}
+
+.agenda-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.agenda-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--primary-50);
+  color: var(--primary-800);
+  border: 1px solid var(--primary-200);
+}
+
+[data-theme="dark"] .agenda-category-badge {
+  background: var(--primary-900);
+  color: var(--gold-300);
+  border-color: var(--border-gold);
+}
+
+.agenda-schedule-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold-600);
+  background: rgba(245, 158, 11, 0.1);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] .agenda-schedule-pill {
+  color: var(--gold-300);
+  background: rgba(245, 158, 11, 0.18);
+}
+
+.agenda-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.agenda-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.agenda-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+}
+
+.agenda-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.agenda-meta-item i {
+  color: var(--primary-600);
+}
+
+[data-theme="dark"] .agenda-meta-item i {
+  color: var(--gold-400);
+}
+
+/* ==========================================================================
+   AGENDA RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .agenda-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .agenda-card {
+    padding: 22px 18px;
+  }
+}

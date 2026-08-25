@@ -1,0 +1,227 @@
+/**
+ * Fasilitas & Galeri Page Styling - Masjid Al Firdaus
+ * Khusus Halaman Fasilitas (Kartu Sarana Ibadah, Galeri 16:9 & Interactive Lightbox)
+ */
+
+/* ==========================================================================
+   FACILITY CARDS GRID
+   ========================================================================== */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.facility-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--primary-400);
+}
+
+.facility-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+  color: var(--primary-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  margin-bottom: 20px;
+  border: 1px solid var(--primary-200);
+  transition: var(--transition);
+}
+
+[data-theme="dark"] .facility-icon-box {
+  background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-950) 100%);
+  color: var(--gold-400);
+  border-color: var(--border-gold);
+}
+
+.facility-card:hover .facility-icon-box {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.facility-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.facility-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.facility-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--primary-50);
+  color: var(--primary-800);
+  border: 1px solid var(--primary-200);
+  align-self: flex-start;
+}
+
+[data-theme="dark"] .facility-badge {
+  background: var(--primary-900);
+  color: var(--gold-300);
+  border-color: var(--border-gold);
+}
+
+/* ==========================================================================
+   GALERI FOTO 16:9 DENGAN HOVER ZOOM & OVERLAY
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 2px solid var(--border-color);
+  aspect-ratio: 16 / 10;
+  cursor: pointer;
+  background: #000000;
+  transition: var(--transition);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--gold-500);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(2, 44, 34, 0.9) 0%, rgba(2, 44, 34, 0.2) 60%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px 22px;
+  transition: var(--transition);
+}
+
+.gallery-caption {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.01em;
+}
+
+/* ==========================================================================
+   FULLSCREEN IMAGE LIGHTBOX MODAL
+   ========================================================================== */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(2, 20, 15, 0.95);
+  backdrop-filter: blur(16px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+}
+
+.lightbox-content img {
+  max-height: 80vh;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--gold-500);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.lightbox-close:hover {
+  background: var(--gold-500);
+  color: #000000;
+  transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   FASILITAS RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .facilities-grid, .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .facility-card {
+    padding: 22px 18px;
+  }
+  .gallery-caption {
+    font-size: 0.92rem;
+  }
+}

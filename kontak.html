@@ -17,9 +17,10 @@
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- CSS -->
+  <!-- Modular CSS -->
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/kontak.css">
 </head>
 <body>
 
@@ -112,87 +113,111 @@
     <!-- Location & Contact Grid -->
     <section class="section">
       <div class="container">
-        <div class="location-grid">
-          <!-- Info Alamat & Form WhatsApp -->
-          <div class="location-info-card">
-            <div class="location-item">
-              <div class="location-icon">
-                <i class="fa-solid fa-location-dot"></i>
+        <div class="contact-grid">
+          
+          <!-- Column 1: Interactive Google Maps Card -->
+          <div class="map-card">
+            <div class="map-card-header">
+              <div class="map-card-header-icon">
+                <i class="fa-solid fa-map-location-dot"></i>
               </div>
               <div>
-                <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-heading); margin-bottom: 4px;">Alamat Lengkap</h4>
-                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
-                  Dukuh Kaligondang, Kalurahan Temon Wetan, Kapanewon Temon, Kabupaten Kulon Progo, Daerah Istimewa Yogyakarta 55654
-                </p>
+                <h3 class="map-card-title">Peta Lokasi Masjid Al Firdaus</h3>
+                <span class="map-card-subtitle">Dukuh Kaligondang, Temon Wetan, Kulon Progo</span>
               </div>
             </div>
 
-            <!-- Kontak Telepon / WhatsApp Resmi -->
-            <div class="location-item">
-              <div class="location-icon" style="background: rgba(37, 211, 102, 0.15); color: #16a34a;">
+            <div class="map-iframe-wrapper">
+              <iframe 
+                src="https://maps.google.com/maps?q=-7.8737951,110.0766366&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                loading="lazy" 
+                title="Peta Lokasi Masjid Al Firdaus Kaligondang Temon Wetan"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="map-info-box">
+              <div class="map-info-item">
+                <i class="fa-solid fa-location-dot map-info-icon"></i>
+                <div>
+                  <strong>Alamat Lengkap:</strong>
+                  <p>Dukuh Kaligondang, Kalurahan Temon Wetan, Kapanewon Temon, Kabupaten Kulon Progo, D.I. Yogyakarta 55654.</p>
+                </div>
+              </div>
+
+              <div class="map-info-item">
+                <i class="fa-solid fa-route map-info-icon"></i>
+                <div>
+                  <strong>Akses Jalan & Lingkungan:</strong>
+                  <p>Terletak di lingkungan asri pedesaan dengan jalan beraspal mulus yang mudah dijangkau kendaraan roda dua maupun mobil.</p>
+                </div>
+              </div>
+
+              <div style="margin-top: 18px;">
+                <a href="https://www.google.com/maps/place/Mushola+Al+Firdaus/@-7.8737951,110.0766366,983m/data=!3m2!1e3!4b1!4m6!3m5!1s0x2e7ae5768bd36477:0x86186545acb7c15!8m2!3d-7.8737951!4d110.0766366!16s%2Fg%2F11smkls85w" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width: 100%; justify-content: center;" id="btn-open-maps-route">
+                  <i class="fa-solid fa-diamond-turn-right"></i> Buka Rute di Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Direct WhatsApp Contact & Message Form -->
+          <div class="contact-card">
+            
+            <!-- Quick WhatsApp Banner Card -->
+            <div class="contact-wa-banner">
+              <div class="contact-wa-icon">
                 <i class="fa-brands fa-whatsapp"></i>
               </div>
-              <div>
-                <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-heading); margin-bottom: 4px;">Kontak Resmi Takmir</h4>
-                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
-                  Nomor HP / WhatsApp Resmi: <strong style="color: var(--text-main); font-size: 1rem;">+62 812-2942-3441</strong>
-                </p>
-                <a href="https://wa.me/6281229423441?text=Assalamu%27alaikum%20Pengurus%20Masjid%20Al%20Firdaus%20Temon%20Wetan" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="margin-top: 8px;">
+              <div class="contact-wa-details">
+                <span class="contact-wa-badge">Layanan Cepat Pengurus</span>
+                <h4 class="contact-wa-title">Kontak Resmi Takmir</h4>
+                <div class="contact-wa-number">+62 812-2942-3441</div>
+                <p class="contact-wa-desc">Ketua Takmir (Muh Abdul Azis) & Pengurus Bidang Pelayanan Jamaah</p>
+                <a href="https://wa.me/6281229423441?text=Assalamu%27alaikum%20Pengurus%20Takmir%20Masjid%20Al%20Firdaus" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="margin-top: 10px; width: 100%; justify-content: center;">
                   <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp Sekarang
                 </a>
               </div>
             </div>
 
-            <div class="location-item">
-              <div class="location-icon">
-                <i class="fa-solid fa-route"></i>
-              </div>
-              <div>
-                <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-heading); margin-bottom: 4px;">Petunjuk Akses Google Maps</h4>
-                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
-                  Lokasi berada di lingkungan asri Dukuh Kaligondang dengan akses jalan desa beraspal yang mudah dilalui kendaraan roda dua maupun roda empat.
-                </p>
-                <a href="https://www.google.com/maps/place/Mushola+Al+Firdaus/@-7.8737951,110.0766366,983m/data=!3m2!1e3!4b1!4m6!3m5!1s0x2e7ae5768bd36477:0x86186545acb7c15!8m2!3d-7.8737951!4d110.0766366!16s%2Fg%2F11smkls85w" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-sm" style="margin-top: 8px;" id="btn-open-maps-route">
-                  <i class="fa-solid fa-map-location-dot"></i> Buka Titik Lokasi di Google Maps
-                </a>
-              </div>
-            </div>
-
-            <!-- Form Kirim Pesan Cepat via WhatsApp -->
-            <div style="border-top: 1px solid var(--border-color); padding-top: 22px;">
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-heading); margin-bottom: 8px;">
-                <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> Kirim Pesan / Aspirasi ke Takmir
+            <!-- Fast Message Form -->
+            <div class="contact-form-section">
+              <h4 class="contact-form-title">
+                <i class="fa-solid fa-paper-plane" style="color: var(--primary-600);"></i> Kirim Pesan / Aspirasi Warga
               </h4>
-              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
-                Pesan akan langsung diarahkan ke nomor WhatsApp resmi (+62 812-2942-3441):
+              <p class="contact-form-desc">
+                Tuliskan pesan Anda di bawah ini, sistem akan otomatis meneruskannya ke kontak WhatsApp pengurus:
               </p>
+
               <form id="masjid-contact-form">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
-                  <input type="text" id="form-sender-name" class="form-input" placeholder="Nama Lengkap Anda" required>
-                  <select id="form-sender-type" class="form-select">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Nama Lengkap Anda *</label>
+                  <input type="text" id="contact-name" class="form-input" placeholder="Masukkan nama Anda..." required>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-category" class="form-label">Kategori Keperluan</label>
+                  <select id="contact-category" class="form-select">
                     <option value="Warga Kaligondang">Warga Kaligondang</option>
-                    <option value="Jamaah Luar Desa">Jamaah Luar Desa</option>
-                    <option value="Orang Tua / Wali Anak">Orang Tua / Wali Anak</option>
-                    <option value="Donatur / Simpatisan">Donatur / Simpatisan</option>
+                    <option value="Jamaah Luar Desa">Jamaah Luar Desa / Musafir</option>
+                    <option value="Layanan Infaq / Donasi">Layanan Infaq & Donasi</option>
+                    <option value="Usulan Kegiatan Ibadah">Usulan Kegiatan Beribadah</option>
                   </select>
                 </div>
-                <textarea id="form-sender-message" class="form-textarea" rows="3" placeholder="Tuliskan pertanyaan, saran, atau usulan kegiatan beribadah..." required style="margin-bottom: 12px;"></textarea>
-                <button type="submit" class="btn btn-primary btn-sm" style="width: 100%;">
-                  <i class="fa-brands fa-whatsapp"></i> Kirim Pesan ke +62 812-2942-3441
+
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">Pesan / Saran / Pertanyaan *</label>
+                  <textarea id="contact-message" class="form-textarea" rows="3" placeholder="Tuliskan pesan atau saran Anda secara ringkas..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                  <i class="fa-brands fa-whatsapp"></i> Kirim Pesan via WhatsApp
                 </button>
               </form>
             </div>
+
           </div>
 
-          <!-- Embedded Map Card (Exact Coordinates) -->
-          <div class="map-container">
-            <iframe 
-              src="https://maps.google.com/maps?q=-7.8737951,110.0766366&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-              loading="lazy" 
-              title="Peta Lokasi Mushola / Masjid Al Firdaus Temon Wetan Kulon Progo"
-              allowfullscreen>
-            </iframe>
-          </div>
         </div>
 
         <!-- FAQ Section -->
@@ -205,37 +230,56 @@
             </p>
           </div>
 
-          <div class="faq-accordion">
+          <div class="faq-list">
+            <!-- FAQ 1 -->
             <div class="faq-item active">
-              <button class="faq-question">
-                <span>Apa saja kegiatan utama yang diselenggarakan di Masjid Al Firdaus?</span>
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-              <div class="faq-answer">
-                Masjid Al Firdaus menyelenggarakan ibadah sholat fardhu 5 waktu berjamaah, pelaksanaan ibadah Sholat Jumat setiap pekan, pengajian majelis taklim warga, kegiatan Remaja Islam Masjid (Rismas), serta bimbingan belajar membaca Al-Qur'an (Iqro') sore bagi anak-anak warga sekitar.
+              <div class="faq-header">
+                <span class="faq-question">Apa saja kegiatan utama yang diselenggarakan di Masjid Al Firdaus?</span>
+                <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+              </div>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  Masjid Al Firdaus menyelenggarakan ibadah sholat fardhu 5 waktu berjamaah, pelaksanaan ibadah Sholat Jumat setiap pekan, pengajian majelis taklim warga, kegiatan Remaja Islam Masjid (Rismas), serta bimbingan belajar membaca Al-Qur'an (Iqro') sore bagi anak-anak warga sekitar.
+                </div>
               </div>
             </div>
 
+            <!-- FAQ 2 -->
             <div class="faq-item">
-              <button class="faq-question">
-                <span>Apakah Masjid Al Firdaus menyelenggarakan Sholat Jumat rutin?</span>
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-              <div class="faq-answer">
-                Ya, sejak peningkatan status secara resmi pada tahun 2026 (4 Muharram 1448 H), Masjid Al Firdaus menyelenggarakan ibadah Sholat Jumat berjamaah secara rutin setiap pekan bagi warga Dukuh Kaligondang dan jamaah musafir.
+              <div class="faq-header">
+                <span class="faq-question">Apakah Masjid Al Firdaus menyelenggarakan Sholat Jumat rutin?</span>
+                <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+              </div>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  Ya, sejak peningkatan status secara resmi pada tahun 2026 (4 Muharram 1448 H), Masjid Al Firdaus menyelenggarakan ibadah Sholat Jumat berjamaah secara rutin setiap pekan bagi warga Dukuh Kaligondang dan jamaah musafir.
+                </div>
               </div>
             </div>
 
+            <!-- FAQ 3 -->
             <div class="faq-item">
-              <button class="faq-question">
-                <span>Bagaimana cara menyalurkan infak melalui transfer Bank BPD DIY?</span>
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-              <div class="faq-answer">
-                Infak dapat ditransfer ke rekening resmi <strong>Bank BPD DIY (024) Capem Temon</strong> No. Rekening <strong>024.231.001470</strong> atas nama <strong>MUH ABDUL AZIS QQ MUSHOLLA AL FIRDAUS</strong>, lalu kirimkan konfirmasi via WhatsApp ke kontak resmi <strong>+62 812-2942-3441</strong>.
+              <div class="faq-header">
+                <span class="faq-question">Bagaimana cara menyalurkan infak melalui transfer Bank BPD DIY?</span>
+                <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+              </div>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  Infak dapat ditransfer ke rekening resmi <strong>Bank BPD DIY (024) Capem Temon</strong> No. Rekening <strong>024.231.001470</strong> atas nama <strong>MUH ABDUL AZIS QQ MUSHOLLA AL FIRDAUS</strong>, lalu kirimkan konfirmasi via WhatsApp ke kontak resmi <strong>+62 812-2942-3441</strong>.
+                </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Next Navigation Actions -->
+        <div style="margin-top: 45px; text-align: center; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="infaq.html" class="btn btn-primary">
+            <i class="fa-solid fa-hand-holding-dollar"></i> Layanan Infaq & Sedekah (BPD DIY) &rarr;
+          </a>
+          <a href="index.html" class="btn btn-outline">
+            <i class="fa-solid fa-house"></i> Kembali ke Beranda
+          </a>
         </div>
       </div>
     </section>
@@ -301,9 +345,10 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- Scripts -->
+  <!-- Modular Scripts -->
   <script src="js/data-takmir.js"></script>
   <script src="js/prayer-times.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/kontak.js"></script>
 </body>
 </html>
